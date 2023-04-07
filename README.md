@@ -2,6 +2,7 @@
  Interactive plot of active and reactive power
 
 cd to the repository root folder
+
 Create python 3 environment named env
 `python -m venv env`
 

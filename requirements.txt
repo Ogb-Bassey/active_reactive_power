@@ -2,3 +2,4 @@ dash==2.9.2
 dash_bootstrap_components==1.4.1
 numpy==1.21.6
 plotly==5.14.1
+gunicorn
