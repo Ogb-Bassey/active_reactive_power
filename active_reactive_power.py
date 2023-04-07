@@ -11,6 +11,7 @@ from dash.dependencies import Input, Output
 
 # Initialize the Dash app with Bootstrap stylesheets
 app = dash.Dash(__name__, external_stylesheets=[dbc.themes.BOOTSTRAP])
+server = app.server
 
 # Define the layout of the app
 app.layout = dbc.Container([
