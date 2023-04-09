@@ -94,9 +94,13 @@ def update_power_plot(frequency, phase_v, phase_i):
     
     # Add annotations to the figure for power values
     figure.add_annotation(x=1, y=4.5,
-            text="P: {:.2f}, Q: {:.2f}, S: {:.2f}, P/S : {:.2f}, \u03B8v - \u03B8i:{} degs".format(P[0], Q[0], S, P[0]/S, phase_v-phase_i),
+            text="Im = Vm = 2, P: {:.2f}, Q: {:.2f}, S: {:.2f}, P/S : {:.2f}, \u03B8v - \u03B8i:{} degs".format(P[0], Q[0], S, P[0]/S, phase_v-phase_i),
             showarrow=False,
             yshift=10)
+    figure.add_annotation(x=1, y=-4.5,
+            text="Slider Settings. Freq (Hz): {:.1f}, Voltage Phase (degs): {}, Current Phase (degs): {}".format(frequency, phase_v, phase_i),
+            showarrow=False,
+            yshift=-10)
     if P[0] == S:
         figure.add_annotation(x=1, y=2,
                 text="Maximum active power (absorbing): 2 Watts",
