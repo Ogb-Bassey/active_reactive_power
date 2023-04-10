@@ -17,7 +17,9 @@ server = app.server
 app.layout = dbc.Container([
     # Add header
     html.H1('Active, Reactive and Instantaneous Power'),
-    
+    html.P([html.Span("Link to supplementary article on "),
+            html.A("active and reactive power", href='https://medium.com/@ogb.bassey/from-real-to-imaginary-understanding-active-and-reactive-power-with-interactive-plots-34d67be8386e', target="_blank"),
+    ]),
     # Add a graph container
     dcc.Graph(id='power-plot-graph'),
     
@@ -99,24 +101,26 @@ def update_power_plot(frequency, phase_v, phase_i):
             yshift=10)
     figure.add_annotation(x=1, y=-4.5,
             text="Slider Settings. Freq (Hz): {:.1f}, Voltage Phase (degs): {}, Current Phase (degs): {}".format(frequency, phase_v, phase_i),
-            showarrow=False,
-            yshift=-10)
+            showarrow=False)
     if P[0] == S:
         figure.add_annotation(x=1, y=2,
                 text="Maximum active power (absorbing): 2 Watts",
                 showarrow=True,
-                arrowhead=1)
+                arrowhead=5,
+                arrowsize=2)
     elif P[0] == -S:
         figure.add_annotation(x=1, y=-2,
                 text="Maximum active power (generating): -2 Watts",
                 showarrow=True,
-                arrowhead=1)
+                arrowhead=5,
+                arrowsize=2)
     elif P[0] < small_num and P[0] > -small_num:
         figure.add_annotation(x=1, y=0,
                 text="Zero active power",
                 showarrow=True,
-                arrowhead=1)
-    figure.update_layout(xaxis_title='Time (sec)', yaxis_title='Power (volts.amps)')
+                arrowhead=5,
+                arrowsize=2)
+    figure.update_layout(xaxis_title='Time (sec)', yaxis_title='Power (volts.amps)', font=dict(size=18))
     figure.update_layout(legend=dict(orientation="h", yanchor="bottom", y=1.02, xanchor="right", x=1))
     figure.update_layout(yaxis_range=[-5,5])
 

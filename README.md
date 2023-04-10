@@ -22,3 +22,5 @@ To see the plot, visit
 `http://127.0.0.1:8050/`
 
 The hosted plot can be accessed here: https://active-reactive-power-plot.onrender.com/
+
+I wrote an article to explain the concept of active and reactive power here https://medium.com/@ogb.bassey/from-real-to-imaginary-understanding-active-and-reactive-power-with-interactive-plots-34d67be8386e
